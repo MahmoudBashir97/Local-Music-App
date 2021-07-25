@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listMusicFragment">
+
+    <fragment
+        android:id="@+id/listMusicFragment"
+        android:name="com.mahmoudbashir.musician_app.fragments.ListMusicFragment"
+        android:label="fragment_list_music"
+        tools:layout="@layout/fragment_list_music" >
+        <action
+            android:id="@+id/action_listMusicFragment_to_musicPlayFragment"
+            app:destination="@id/musicPlayFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/musicPlayFragment"
+        android:name="com.mahmoudbashir.musician_app.fragments.MusicPlayFragment"
+        android:label="fragment_music_play"
+        tools:layout="@layout/fragment_music_play" >
+        <action
+            android:id="@+id/action_musicPlayFragment_to_listMusicFragment"
+            app:destination="@id/listMusicFragment" />
+        <argument
+            android:name="song"
+            app:argType="com.mahmoudbashir.musician_app.models.Song"
+            app:nullable="true" />
+    </fragment>
+</navigation>
